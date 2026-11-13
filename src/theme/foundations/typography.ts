@@ -31,13 +31,72 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
     fontWeightMedium: 600,
 
     h1: {
+        fontFamily: "'Circular Std', 'Inter', sans-serif",
         fontSize: typographyUtil.pxToRem(30),
         fontWeight: 700,
         lineHeight: typographyUtil.pxToRem(45),
 
+        [theme.breakpoints.up('sm')]: {
+            fontSize: typographyUtil.pxToRem(36),
+            lineHeight: typographyUtil.pxToRem(50),
+        },
         [theme.breakpoints.up('md')]: {
             fontSize: typographyUtil.pxToRem(48),
             lineHeight: typographyUtil.pxToRem(62.5),
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: typographyUtil.pxToRem(52),
+            lineHeight: typographyUtil.pxToRem(66),
+        },
+        [theme.breakpoints.up('xl')]: {
+            fontSize: typographyUtil.pxToRem(56),
+            lineHeight: typographyUtil.pxToRem(70),
+        },
+    },
+
+    h2: {
+        fontSize: typographyUtil.pxToRem(28),
+        fontWeight: 700,
+        lineHeight: typographyUtil.pxToRem(40),
+
+        [theme.breakpoints.up('sm')]: {
+            fontSize: typographyUtil.pxToRem(34),
+            lineHeight: typographyUtil.pxToRem(46),
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: typographyUtil.pxToRem(46),
+            lineHeight: typographyUtil.pxToRem(58.5),
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: typographyUtil.pxToRem(48),
+            lineHeight: typographyUtil.pxToRem(60),
+        },
+        [theme.breakpoints.up('xl')]: {
+            fontSize: typographyUtil.pxToRem(52),
+            lineHeight: typographyUtil.pxToRem(64),
+        },
+    },
+
+    h3: {
+        fontSize: typographyUtil.pxToRem(24),
+        fontWeight: 700,
+        lineHeight: typographyUtil.pxToRem(34),
+
+        [theme.breakpoints.up('sm')]: {
+            fontSize: typographyUtil.pxToRem(28),
+            lineHeight: typographyUtil.pxToRem(38),
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: typographyUtil.pxToRem(34),
+            lineHeight: typographyUtil.pxToRem(44),
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: typographyUtil.pxToRem(36),
+            lineHeight: typographyUtil.pxToRem(46),
+        },
+        [theme.breakpoints.up('xl')]: {
+            fontSize: typographyUtil.pxToRem(40),
+            lineHeight: typographyUtil.pxToRem(50),
         },
     },
 });
