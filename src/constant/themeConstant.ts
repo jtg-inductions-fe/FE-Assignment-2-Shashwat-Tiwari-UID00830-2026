@@ -9,13 +9,13 @@ export const COLORS = {
         DARK: '#0b7753',
         CONTRAST_TEXT: '#FFFFFF',
     },
-    SECONDARY:{
+    SECONDARY: {
         MAIN: '#1c2531',
     },
-    TEXT:{
-        PRIMARY:'#101725',
+    TEXT: {
+        PRIMARY: '#101725',
     },
-    VEG:'#17a44b',
+    VEG: '#17a44b',
     NON_VEG: '#b91c1c',
 };
 

@@ -11,10 +11,10 @@ export const palette: PaletteOptions = {
         dark: COLORS.PRIMARY.DARK,
         contrastText: COLORS.PRIMARY.CONTRAST_TEXT,
     },
-    secondary:{
-        main:COLORS.SECONDARY.MAIN,
+    secondary: {
+        main: COLORS.SECONDARY.MAIN,
     },
-    text:{
+    text: {
         primary: COLORS.TEXT.PRIMARY,
     },
 };

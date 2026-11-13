@@ -1,8 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
 import ErrorBoundary from 'theme/components/errorBoundary';
+
+import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
 
 import { theme } from '@theme';
 
@@ -13,8 +14,7 @@ createRoot(rootElement).render(
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <Typography variant="h1">Hello World</Typography>
-            <ErrorBoundary>
-            </ErrorBoundary>
+            <ErrorBoundary></ErrorBoundary>
         </ThemeProvider>
     </StrictMode>,
 );

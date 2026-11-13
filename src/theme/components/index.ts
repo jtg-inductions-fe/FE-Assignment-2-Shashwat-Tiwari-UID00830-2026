@@ -1,11 +1,10 @@
 import type { Components } from '@mui/material/styles';
 
+import CircularStdBoldTTF from '@assets/fonts/circularStd/CircularStd-Bold.ttf';
+import CircularStdBoldWOFF2 from '@assets/fonts/circularStd/CircularStd-Bold.woff2';
 // Local Font files
 import InterRegularTTF from '@assets/fonts/inter/inter-regular.ttf';
 import InterRegularWOFF2 from '@assets/fonts/inter/inter-regular.woff2';
-
-import CircularStdBoldTTF from '@assets/fonts/circularStd/CircularStd-Bold.ttf';
-import CircularStdBoldWOFF2 from '@assets/fonts/circularStd/CircularStd-Bold.woff2';
 
 // TODO: Add necessary font face declarations here
 const fontFaceDeclarations = `
