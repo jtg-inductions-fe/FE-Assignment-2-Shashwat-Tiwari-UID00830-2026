@@ -1,3 +1,6 @@
+/**
+ * This file contains the routes of the entire page.
+ */
 import Layout from 'layouts/Layout';
 import Cart from 'pages/Cart';
 import Discover from 'pages/Discover';

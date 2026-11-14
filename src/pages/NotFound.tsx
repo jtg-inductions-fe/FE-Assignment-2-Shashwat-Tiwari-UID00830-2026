@@ -1,3 +1,6 @@
+/**
+ * This file contains the Error 404 page component for invalid routes.
+ */
 import { Link } from 'react-router-dom';
 
 import { Box, Button, Typography } from '@mui/material';

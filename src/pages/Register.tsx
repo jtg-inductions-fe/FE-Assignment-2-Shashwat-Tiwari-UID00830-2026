@@ -1,3 +1,6 @@
+/**
+ * This file contains the Register component.
+ */
 import { Box, Button, Typography } from '@mui/material';
 const Register = () => (
     <Box

@@ -1,3 +1,7 @@
+/**
+ * This file contains the Header component.
+ */
+
 import { Typography } from '@mui/material';
 
 const Header = () => (

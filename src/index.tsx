@@ -1,3 +1,7 @@
+/**
+ * Application entry point. Mounts the React tree and sets up the
+ * global providers.
+ */
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 

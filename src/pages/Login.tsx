@@ -1,3 +1,6 @@
+/**
+ * This file contains the Login component.
+ */
 import { Box, Button, Typography } from '@mui/material';
 
 const Login = () => (
