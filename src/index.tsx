@@ -1,11 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import ErrorBoundary from 'theme/components/errorBoundary';
+import ErrorBoundary from 'components/errorBoundary';
 
-import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 
 import { theme } from '@theme';
+
+import App from './app';
 
 const rootElement = document.getElementById('root') as HTMLElement;
 
@@ -13,8 +15,9 @@ createRoot(rootElement).render(
     <StrictMode>
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Typography variant="h1">Hello World</Typography>
-            <ErrorBoundary></ErrorBoundary>
+            <ErrorBoundary>
+                <App />
+            </ErrorBoundary>
         </ThemeProvider>
     </StrictMode>,
 );
