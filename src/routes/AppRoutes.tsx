@@ -1,12 +1,13 @@
 /**
  * This file contains the routes of the entire page.
  */
-import Layout from 'layouts/Layout';
-import Cart from 'pages/Cart';
-import Discover from 'pages/Discover';
-import NotFound from 'pages/NotFound';
-import Orders from 'pages/Orders';
 import { Route, Routes } from 'react-router-dom';
+
+import Layout from '@/layouts/Layout';
+import Cart from '@/pages/Cart';
+import Discover from '@/pages/Discover';
+import NotFound from '@/pages/NotFound';
+import Orders from '@/pages/Orders';
 
 import Login from '../pages/Login';
 import Register from '../pages/Register';
