@@ -31,7 +31,6 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
     fontWeightMedium: 600,
 
     h1: {
-        fontFamily: "'Circular Std', 'Inter', sans-serif",
         fontSize: typographyUtil.pxToRem(30),
         fontWeight: 700,
         lineHeight: typographyUtil.pxToRem(45),

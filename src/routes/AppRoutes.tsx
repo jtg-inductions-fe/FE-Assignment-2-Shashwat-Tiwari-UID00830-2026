@@ -1,6 +1,7 @@
 import Layout from 'layouts/Layout';
 import Cart from 'pages/Cart';
 import Discover from 'pages/Discover';
+import NotFound from 'pages/NotFound';
 import Orders from 'pages/Orders';
 import { Route, Routes } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ const AppRoutes = () => (
             <Route path="/cart" element={<Cart />} />
             <Route path="/orders" element={<Orders />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
     </Routes>
 );
 
