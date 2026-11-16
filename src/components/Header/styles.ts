@@ -7,7 +7,7 @@ export const HeaderStyle = styled('header')(({ theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    minHeight: '100px',
+    minHeight: '10vh',
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     padding: theme.spacing(2, 2),
