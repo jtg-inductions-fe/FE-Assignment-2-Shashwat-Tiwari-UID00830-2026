@@ -17,13 +17,18 @@ import {
     ProfileButton,
 } from '@/components/Header/styles';
 
+import logo from '/logo.svg';
+
 const Header = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isCustomer, setIsCustomer] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [isCustomer, setIsCustomer] = useState<boolean>(false);
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     return (
         <HeaderStyle>
-            <Logo to="/">BiteBox</Logo>
+            <Logo to="/">
+                <img src={logo} alt="BiteBox Logo" height="70" width="70" />
+                BiteBox
+            </Logo>
             <ButtonStyles>
                 {isAuthenticated ? (
                     <>

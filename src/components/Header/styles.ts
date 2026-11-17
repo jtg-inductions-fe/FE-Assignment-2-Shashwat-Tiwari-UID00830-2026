@@ -20,6 +20,8 @@ export const Logo = styled(Link)(({ theme }) => ({
     ...theme.typography.h3,
     textDecoration: 'none',
     color: 'inherit',
+    display: 'flex',
+    alignItems: 'center',
 }));
 
 export const ButtonStyles = styled(Box)(({ theme }) => ({
