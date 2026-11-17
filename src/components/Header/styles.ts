@@ -1,3 +1,7 @@
+/**
+ * This file contains all the stylings related to the header component.
+ */
+
 import { Link } from 'react-router-dom';
 
 import { Box, IconButton } from '@mui/material';
