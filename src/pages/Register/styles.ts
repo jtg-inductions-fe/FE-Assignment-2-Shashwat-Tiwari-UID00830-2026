@@ -1,7 +1,9 @@
 import { typography } from 'theme/foundations/typography';
 
-import { Box, FormLabel, RadioGroup, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
+
+import { BORDER_RADIUS } from '@/constant';
 
 export const PageRoot = styled('main')(({ theme }) => ({
     display: 'flex',
@@ -16,17 +18,18 @@ export const FormCard = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '20px',
+    justifyContent: 'center',
+    gap: theme.spacing(5),
     width: '100%',
-    maxWidth: typography.typographyUtil.pxToRem(500),
-    height: '100%',
-    maxHeight: typography.typographyUtil.pxToRem(600),
+    maxWidth: typography.typographyUtil.pxToRem(600),
+    height: 'auto',
+    maxHeight: typography.typographyUtil.pxToRem(800),
     padding: theme.spacing(4, 3),
     backgroundColor: theme.palette.primary.contrastText,
     [theme.breakpoints.up('sm')]: {
         padding: theme.spacing(5),
         border: '1px solid black',
-        borderRadius: '50px',
+        borderRadius: BORDER_RADIUS,
     },
 }));
 
@@ -44,20 +47,9 @@ export const Form = styled('form')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: theme.spacing(5),
+    width: '80%',
 }));
 
-export const FooterText = styled(Typography)(({ theme }) => ({
-    marginTop: theme.spacing(3),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
-
-export const RoleLabel = styled(FormLabel)(({ theme }) => ({
-    color: theme.palette.text.primary,
-    marginBottom: theme.spacing(1),
-}));
-
-export const RoleOptions = styled(RadioGroup)(({ theme }) => ({
-    flexDirection: 'row',
-    columnGap: theme.spacing(4),
+export const Alert = styled('div')(({ theme }) => ({
+    color: theme.palette.error.main,
 }));
