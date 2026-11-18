@@ -9,7 +9,7 @@ import Discover from '@/pages/Discover.page';
 import Login from '@/pages/Login.page';
 import NotFound from '@/pages/NotFound.page';
 import Orders from '@/pages/Orders.page';
-import Register from '@/pages/Register.page';
+import Register from '@/pages/Register/Register.page';
 
 const AppRoutes = () => (
     <Routes>
