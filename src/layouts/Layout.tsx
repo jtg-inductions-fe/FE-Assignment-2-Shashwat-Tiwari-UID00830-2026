@@ -3,7 +3,7 @@
  */
 import { Outlet } from 'react-router-dom';
 
-import Header from '@/components/Header.component';
+import Header from '@/components/Header/Header.component';
 
 const Layout = () => (
     <div>
