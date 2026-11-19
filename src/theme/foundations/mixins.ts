@@ -15,7 +15,17 @@ const lineClamp = (lines: number = 1): CSSProperties => ({
     WebkitBoxOrient: 'vertical',
     WebkitLineClamp: lines,
 });
+/**
+ * Creates a CSS block for centering an element with flex properties
+ * @returns Returns flex properties
+ */
+const flexCenter = (): CSSProperties => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+});
 
 export const mixins: MixinsOptions = {
     lineClamp,
+    flexCenter,
 };

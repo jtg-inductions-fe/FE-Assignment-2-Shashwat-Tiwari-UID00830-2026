@@ -12,21 +12,26 @@
         "lint:fix": "eslint --fix .",
         "preview": "vite preview",
         "prettier": "npx prettier --write ./",
-        "postinstall": "husky install"
+        "postinstall": "husky install",
+        "pre-commit": "npx lint-staged"
     },
     "dependencies": {
         "@emotion/react": "11.14.0",
         "@emotion/styled": "11.14.0",
         "@mui/icons-material": "6.4.1",
         "@mui/material": "6.4.1",
-        "react": "19.0.0",
-        "react-dom": "19.0.0"
+        "@reduxjs/toolkit": "^2.14.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-hook-form": "^7.91.0",
+        "react-redux": "^9.3.1",
+        "react-router-dom": "^7.18.5"
     },
     "devDependencies": {
         "@types/eslint-plugin-jsx-a11y": "6",
-        "@types/node": "22.10.7",
-        "@types/react": "19.0.7",
-        "@types/react-dom": "19.0.3",
+        "@types/node": "^22.10.7",
+        "@types/react": "^18.3.31",
+        "@types/react-dom": "^18.3.7",
         "@vitejs/plugin-react": "4.3.4",
         "eslint": "9.18.0",
         "eslint-config-prettier": "10.0.1",
@@ -46,5 +51,6 @@
         "vite": "6.0.11",
         "vite-plugin-image-optimizer": "1.1.8",
         "vite-tsconfig-paths": "5.1.4"
-    }
+    },
+    "packageManager": "yarn@4.18.1"
 }
