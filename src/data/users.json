@@ -8,8 +8,15 @@
     },
     {
         "id": "u2",
-        "name": "Owner",
+        "name": "hello",
         "email": "owner@example.com",
+        "password": "12345678",
+        "role": "Owner"
+    },
+    {
+        "id": "u3",
+        "name": "Second Owner",
+        "email": "owner2@example.com",
         "password": "12345678",
         "role": "Owner"
     }

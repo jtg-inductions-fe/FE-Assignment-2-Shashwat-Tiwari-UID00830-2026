@@ -2,6 +2,7 @@
  * This file contains the redux store configuration
  */
 import authReducer from '@/state/slices/authSlice';
+import restaurantReducer from '@/state/slices/restaurantSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 /**
@@ -11,6 +12,7 @@ import { configureStore } from '@reduxjs/toolkit';
 export const store = configureStore({
     reducer: {
         auth: authReducer,
+        restaurant: restaurantReducer,
     },
 });
 

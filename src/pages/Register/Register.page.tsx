@@ -18,6 +18,7 @@ import FormComponent from '@/components/Form/Form.component';
 import { Alert, Form, Submit } from '@/components/Form/styles';
 import { RadioGroupStyles } from '@/pages/Register/styles';
 import { registerSuccess } from '@/state/slices/authSlice';
+import { User } from '@/state/types/authSlice.types';
 import {
     RegisterFormValues,
     registerSchema,
@@ -44,7 +45,11 @@ const Register = () => {
      */
     const onSubmit: SubmitHandler<RegisterFormValues> = async (data) => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
-        dispatch(registerSuccess(data));
+        const newUser: User = {
+            id: crypto.randomUUID(),
+            ...data,
+        };
+        dispatch(registerSuccess(newUser));
         void navigate('/discover');
     };
 
