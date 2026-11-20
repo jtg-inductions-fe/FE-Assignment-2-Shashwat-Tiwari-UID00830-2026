@@ -36,3 +36,9 @@ export const HTML_FONT_SIZE = 10;
  * @constant
  */
 export const SCALING_FACTOR = 4;
+
+/**
+ * Border radius of the page for designing.
+ * @constant
+ */
+export const BORDER_RADIUS = 20;

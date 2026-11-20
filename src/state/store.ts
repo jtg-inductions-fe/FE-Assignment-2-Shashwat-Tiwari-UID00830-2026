@@ -1,6 +1,7 @@
 /**
  * This file contains the redux store configuration
  */
+import authReducer from '@/state/slices/authSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 /**
@@ -8,7 +9,9 @@ import { configureStore } from '@reduxjs/toolkit';
  * Register each feature's reducer in the `reducer` map below,
  */
 export const store = configureStore({
-    reducer: {},
+    reducer: {
+        auth: authReducer,
+    },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

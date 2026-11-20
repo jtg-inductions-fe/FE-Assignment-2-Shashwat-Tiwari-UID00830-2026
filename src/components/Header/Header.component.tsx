@@ -4,7 +4,9 @@
 
 import { useState } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -16,13 +18,23 @@ import {
     Logo,
     ProfileButton,
 } from '@/components/Header/styles';
+import { logout } from '@/state/slices/authSlice';
+import { RootState } from '@/state/store';
 
 import logo from '/logo.svg';
-
 const Header = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-    const [isCustomer, setIsCustomer] = useState<boolean>(false);
+    const { isAuthenticated, user } = useSelector(
+        (state: RootState) => state.auth,
+    );
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+    const isCustomer = user?.role === 'Customer';
+    const handleLogout = () => {
+        setAnchorEl(null);
+        dispatch(logout());
+        void navigate('/login');
+    };
     return (
         <HeaderStyle>
             <Logo to="/">
@@ -43,6 +55,7 @@ const Header = () => {
                             </IconButton>
                         )}
                         <ProfileButton
+                            aria-label="Profile"
                             onClick={(e) => {
                                 setAnchorEl(e.currentTarget);
                             }}
@@ -54,15 +67,8 @@ const Header = () => {
                             open={Boolean(anchorEl)}
                             onClose={() => setAnchorEl(null)}
                         >
-                            <MenuItem>Hello User!</MenuItem>
-                            <MenuItem
-                                onClick={() => {
-                                    setAnchorEl(null);
-                                    setIsAuthenticated(false);
-                                }}
-                            >
-                                Logout
-                            </MenuItem>
+                            <MenuItem>Hello {user?.name}!</MenuItem>
+                            <MenuItem onClick={handleLogout}>Logout</MenuItem>
                         </Menu>
                     </>
                 ) : (
@@ -73,7 +79,6 @@ const Header = () => {
                             size="large"
                             component={Link}
                             to="/login"
-                            onClick={() => setIsAuthenticated(true)}
                         >
                             Log In
                         </Button>
@@ -83,10 +88,6 @@ const Header = () => {
                             size="large"
                             component={Link}
                             to="/register"
-                            onClick={() => {
-                                setIsAuthenticated(true);
-                                setIsCustomer(true);
-                            }}
                         >
                             Sign Up
                         </Button>
