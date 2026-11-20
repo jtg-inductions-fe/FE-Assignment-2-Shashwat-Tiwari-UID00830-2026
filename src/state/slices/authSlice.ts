@@ -1,15 +1,13 @@
 /**
  * This module contains the authentication slice of the redux toolkit.
  */
-import { AuthState } from '@/state/types/authSlice.types';
+import { AuthState, User } from '@/state/types/authSlice.types';
 import {
     loadFromStorage,
     removeFromStorage,
     saveToStorage,
 } from '@/utils/storage';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-type User = NonNullable<AuthState['user']>;
 
 const savedUser = loadFromStorage('user', null);
 
