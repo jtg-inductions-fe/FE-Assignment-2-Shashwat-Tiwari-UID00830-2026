@@ -9,7 +9,7 @@ export const registerSchema = z.object({
         .trim()
         .min(1, 'Name is required'),
     email: z.email(),
-    password: z.string().min(8),
+    password: z.string().min(8, 'Password is too small'),
     role: z.enum(['Customer', 'Owner']),
 });
 
