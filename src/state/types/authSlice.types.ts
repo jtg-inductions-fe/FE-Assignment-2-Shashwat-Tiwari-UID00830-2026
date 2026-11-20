@@ -1,6 +1,6 @@
 export type Role = 'Customer' | 'Owner';
 
-interface User {
+export interface User {
     name: string;
     email: string;
     role: Role;
