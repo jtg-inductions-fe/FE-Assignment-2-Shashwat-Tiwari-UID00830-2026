@@ -2,21 +2,15 @@
  * This file contains the restaurants State.
  */
 
-import seedRestaurants from '@/data/restaurants.json';
+import localRestaurants from '@/data/restaurants.json';
 import {
     Restaurant,
     RestaurantState,
 } from '@/state/types/restaurantSlice.types';
-import { loadFromStorage } from '@/utils/storage';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export const RESTAURANTS_KEY = 'restaurants';
-
 const initialState: RestaurantState = {
-    items: loadFromStorage<Restaurant[]>(
-        RESTAURANTS_KEY,
-        seedRestaurants as Restaurant[],
-    ),
+    items: localRestaurants as Restaurant[],
 };
 
 const restaurantSlice = createSlice({
