@@ -1,7 +1,7 @@
 /**
  * This file contaisnt the Restaurant discovery component.
  */
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -47,17 +47,15 @@ const Discover = () => {
     const [deleteTarget, setDeleteTarget] = useState<Restaurant | null>(null);
     const debouncedSearch = useDebounce(search);
     const dispatch = useDispatch();
-    const results = useMemo(() => {
-        const term = debouncedSearch.trim().toLowerCase();
-        return restaurants.filter((restaurant) => {
-            if (user?.role === 'Owner' && restaurant.ownerId !== user.id)
-                return false;
-            if (filter === 'veg' && restaurant.type !== 'veg') return false;
-            if (filter === 'non-veg' && restaurant.type !== 'non-veg')
-                return false;
-            return restaurant.name.toLowerCase().includes(term);
-        });
-    }, [restaurants, user, filter, debouncedSearch]);
+    const term = debouncedSearch.trim().toLowerCase();
+
+    const results = restaurants.filter((restaurant) => {
+        if (user?.role === 'Owner' && restaurant.ownerId !== user.id)
+            return false;
+        if (filter === 'veg' && restaurant.type !== 'veg') return false;
+        if (filter === 'non-veg' && restaurant.type !== 'non-veg') return false;
+        return restaurant.name.toLowerCase().includes(term);
+    });
     const openAdd = () => {
         setEditing(null);
         setFormOpen(true);
