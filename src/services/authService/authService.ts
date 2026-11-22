@@ -1,7 +1,7 @@
 /**
  * This file handles the authentication process of the login form from the mock data.
  */
-import seedUsers from '@/data/users.json';
+import localUsers from '@/data/users.json';
 import { StoredUser } from '@/services/authService/authService.types';
 
 /**
@@ -15,7 +15,7 @@ const getAllUsers = (): StoredUser[] => {
         localStorage.getItem('registeredUsers') ?? '[]',
     ) as StoredUser[];
 
-    return [...(seedUsers as StoredUser[]), ...registered];
+    return [...(localUsers as StoredUser[]), ...registered];
 };
 /**
  * Validates the provided email and password against the available users.
