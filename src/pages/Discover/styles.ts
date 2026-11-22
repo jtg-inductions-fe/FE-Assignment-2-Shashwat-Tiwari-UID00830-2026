@@ -45,3 +45,15 @@ export const EmptyState = styled(Typography)(({ theme }) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
 }));
+
+export const PageHeader = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: theme.spacing(3),
+}));
+
+export const Heading = styled(Typography)(({ theme }) => ({
+    color: theme.palette.primary.main,
+}));

@@ -52,3 +52,10 @@ export const FoodTypeLabel = styled('span', {
     color: isVeg ? theme.palette.success.main : theme.palette.error.main,
     fontWeight: theme.typography.fontWeightMedium,
 }));
+
+export const OwnerActions = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'flex-end',
+    gap: theme.spacing(1),
+    padding: theme.spacing(1, 2),
+}));

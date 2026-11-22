@@ -3,7 +3,11 @@
  */
 
 import { Star } from '@mui/icons-material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import { IconButton } from '@mui/material';
 
+import { RestaurantCardProps } from '@/components/RestaurantCard/RestaurantCard.types';
 import {
     CardBody,
     CardBox,
@@ -12,19 +16,19 @@ import {
     Desc,
     FoodTypeLabel,
     Name,
+    OwnerActions,
 } from '@/components/RestaurantCard/styles';
-import { Restaurant } from '@/state/types/restaurantSlice.types';
 
 const FOOD_TYPE = {
     veg: 'Veg',
     'non-veg': 'Non-Veg',
 };
 
-interface RestaurantCardProps {
-    restaurant: Restaurant;
-}
-
-const RestaurantCard = ({ restaurant }: RestaurantCardProps) => (
+const RestaurantCard = ({
+    restaurant,
+    onEdit,
+    onDelete,
+}: RestaurantCardProps) => (
     <CardBox>
         <CardLink to={`/discover/${restaurant.id}`}>
             <CardImage src={restaurant.image} alt={restaurant.name} />
@@ -41,6 +45,20 @@ const RestaurantCard = ({ restaurant }: RestaurantCardProps) => (
                 </FoodTypeLabel>
             </CardBody>
         </CardLink>
+        {(onEdit || onDelete) && (
+            <OwnerActions>
+                {onEdit && (
+                    <IconButton onClick={() => onEdit(restaurant)}>
+                        <EditIcon />
+                    </IconButton>
+                )}
+                {onDelete && (
+                    <IconButton onClick={() => onDelete(restaurant)}>
+                        <DeleteIcon />
+                    </IconButton>
+                )}
+            </OwnerActions>
+        )}
     </CardBox>
 );
 
