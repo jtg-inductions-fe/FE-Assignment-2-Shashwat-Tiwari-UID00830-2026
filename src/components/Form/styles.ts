@@ -1,5 +1,5 @@
 /**
- * This file contains the Styled components of the of the Form component.
+ * This file contains the Styled components of the Form component.
  */
 import { typography } from 'theme/foundations/typography';
 
