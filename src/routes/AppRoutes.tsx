@@ -6,7 +6,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Layout from '@/layouts/Layout';
 import Cart from '@/pages/Cart.page';
-import Discover from '@/pages/Discover.page';
+import Discover from '@/pages/Discover/Discover.page';
 import Login from '@/pages/Login/Login.page';
 import NotFound from '@/pages/NotFound/NotFound.page';
 import Orders from '@/pages/Orders.page';

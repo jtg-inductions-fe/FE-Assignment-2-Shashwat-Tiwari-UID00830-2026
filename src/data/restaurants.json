@@ -1,0 +1,42 @@
+[
+    {
+        "id": "r1",
+        "ownerId": "u2",
+        "name": "Spice Route",
+        "cuisine": "North Indian",
+        "type": "non-veg",
+        "image": "https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?format=auto&optimize=high&width=1440",
+        "rating": 4.4,
+        "address": "Connaught Place, Delhi"
+    },
+    {
+        "id": "r2",
+        "ownerId": "u3",
+        "name": "Green Bowl",
+        "cuisine": "Healthy",
+        "type": "veg",
+        "image": "https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?format=auto&optimize=high&width=1440",
+        "rating": 4.2,
+        "address": "Hauz Khas, Delhi"
+    },
+    {
+        "id": "r3",
+        "ownerId": "u3",
+        "name": "Tandoor House",
+        "cuisine": "Mughlai",
+        "type": "non-veg",
+        "image": "https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?format=auto&optimize=high&width=1440",
+        "rating": 4.6,
+        "address": "Karol Bagh, Delhi"
+    },
+    {
+        "id": "r4",
+        "ownerId": "u3",
+        "name": "Pizza Corner",
+        "cuisine": "Italian",
+        "type": "veg",
+        "image": "https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?format=auto&optimize=high&width=1440",
+        "rating": 4.1,
+        "address": "Saket, Delhi"
+    }
+]
