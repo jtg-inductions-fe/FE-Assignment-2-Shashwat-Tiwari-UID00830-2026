@@ -12,8 +12,14 @@ export interface Restaurant {
     image: string;
     rating: number;
     address: string;
+    hours: StoreHours;
 }
 
 export interface RestaurantState {
     items: Restaurant[];
+}
+
+export interface StoreHours {
+    openHours: string;
+    closeHours: string;
 }

@@ -22,6 +22,7 @@ import {
     addRestaurant,
     updateRestaurant,
 } from '@/state/slices/restaurantSlice';
+import { DEFAULT_HOURS } from '@/utils/hours';
 import {
     RestaurantFormValues,
     restaurantSchema,
@@ -37,6 +38,8 @@ const EMPTY_VALUES: RestaurantFormValues = {
     type: 'non-veg',
     image: '',
     address: '',
+    openHours: DEFAULT_HOURS.openHours,
+    closeHours: DEFAULT_HOURS.closeHours,
 };
 
 export const RestaurantFormDialog = ({
@@ -68,12 +71,16 @@ export const RestaurantFormDialog = ({
                       type: restaurant.type,
                       image: restaurant.image,
                       address: restaurant.address,
+                      openHours: restaurant.hours.openHours,
+                      closeHours: restaurant.hours.closeHours,
                   }
                 : EMPTY_VALUES,
         );
     }, [open, restaurant, reset]);
     const onSubmit: SubmitHandler<RestaurantFormValues> = async (data) => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
+        const { openHours, closeHours, ...details } = data;
+        const hours = { openHours, closeHours };
         if (restaurant) {
             dispatch(updateRestaurant({ ...restaurant, ...data }));
             onSaved('Restaurant updated');
@@ -83,7 +90,8 @@ export const RestaurantFormDialog = ({
                     id: `r${Date.now()}`,
                     ownerId,
                     rating: Math.floor(Math.random() * 6),
-                    ...data,
+                    ...details,
+                    hours,
                 }),
             );
             onSaved('Restaurant added');
@@ -139,6 +147,20 @@ export const RestaurantFormDialog = ({
                         label="Address"
                         error={!!errors.address}
                         helperText={errors.address?.message}
+                    />
+                    <TextField
+                        {...register('openHours')}
+                        type="time"
+                        label="Opens at"
+                        error={!!errors.openHours}
+                        helperText={errors.openHours?.message}
+                    />
+                    <TextField
+                        {...register('closeHours')}
+                        type="time"
+                        label="Closes at"
+                        error={!!errors.closeHours}
+                        helperText={errors.closeHours?.message}
                     />
                 </DialogForm>
             </DialogContent>

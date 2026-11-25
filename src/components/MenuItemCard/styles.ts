@@ -43,3 +43,17 @@ export const FoodTypeLabel = styled('span', {
     color: isVeg ? theme.palette.success.main : theme.palette.error.main,
     fontWeight: theme.typography.fontWeightMedium,
 }));
+
+export const Footer = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: theme.spacing(2),
+    marginTop: 'auto',
+    paddingTop: theme.spacing(2),
+}));
+
+export const OutOfStock = styled(Typography)(({ theme }) => ({
+    color: theme.palette.error.main,
+    fontWeight: theme.typography.fontWeightMedium,
+}));

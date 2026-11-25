@@ -7,7 +7,11 @@
         "type": "non-veg",
         "image": "https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?format=auto&optimize=high&width=1440",
         "rating": 4.4,
-        "address": "Connaught Place, Delhi"
+        "address": "Connaught Place, Delhi",
+        "hours": {
+            "open": "11:00",
+            "close": "23:00"
+        }
     },
     {
         "id": "r2",
@@ -17,7 +21,11 @@
         "type": "veg",
         "image": "https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?format=auto&optimize=high&width=1440",
         "rating": 4.2,
-        "address": "Hauz Khas, Delhi"
+        "address": "Hauz Khas, Delhi",
+        "hours": {
+            "open": "9:00",
+            "close": "22:00"
+        }
     },
     {
         "id": "r3",
@@ -27,7 +35,11 @@
         "type": "non-veg",
         "image": "https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?format=auto&optimize=high&width=1440",
         "rating": 4.6,
-        "address": "Karol Bagh, Delhi"
+        "address": "Karol Bagh, Delhi",
+        "hours": {
+            "open": "9:00",
+            "close": "22:00"
+        }
     },
     {
         "id": "r4",
@@ -37,6 +49,10 @@
         "type": "veg",
         "image": "https://www.saveur.com/uploads/2013/04/JTPSD2ONPYISBHIP4CJ5HDW55A_01.webp?format=auto&optimize=high&width=1440",
         "rating": 4.1,
-        "address": "Saket, Delhi"
+        "address": "Saket, Delhi",
+        "hours": {
+            "open": "11:00",
+            "close": "23:00"
+        }
     }
 ]

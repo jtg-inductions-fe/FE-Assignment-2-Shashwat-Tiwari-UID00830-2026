@@ -1,5 +1,6 @@
 import localMenu from '@/data/menu.json';
 import { MenuItem, MenuState } from '@/state/types/menuSlice.types';
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: MenuState = {
@@ -22,9 +23,18 @@ const menuSlice = createSlice({
         deleteMenuItem: (state, action: PayloadAction<string>) => {
             state.items = state.items.filter((m) => m.id !== action.payload);
         },
+        deleteMenuItemsByRestaurant: (state, action: PayloadAction<string>) => {
+            state.items = state.items.filter(
+                (i) => i.restaurantId !== action.payload,
+            );
+        },
     },
 });
 
-export const { addMenuItem, updateMenuItem, deleteMenuItem } =
-    menuSlice.actions;
+export const {
+    addMenuItem,
+    updateMenuItem,
+    deleteMenuItem,
+    deleteMenuItemsByRestaurant,
+} = menuSlice.actions;
 export default menuSlice.reducer;
