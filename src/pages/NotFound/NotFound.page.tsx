@@ -7,7 +7,7 @@ import { Button, Typography } from '@mui/material';
 
 import { ErrorCode, Message, Root } from './styles';
 
-const NotFound = () => (
+export const NotFound = () => (
     <Root>
         <ErrorCode variant="h1">404</ErrorCode>
         <Typography variant="h3">Page not found</Typography>
@@ -17,5 +17,3 @@ const NotFound = () => (
         </Button>
     </Root>
 );
-
-export default NotFound;

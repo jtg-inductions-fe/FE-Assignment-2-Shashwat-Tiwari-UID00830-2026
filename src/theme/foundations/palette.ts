@@ -13,6 +13,9 @@ export const palette: PaletteOptions = {
     },
     secondary: {
         main: COLORS.SECONDARY.MAIN,
+        light: COLORS.SECONDARY.LIGHT,
+        dark: COLORS.SECONDARY.DARK,
+        contrastText: COLORS.SECONDARY.CONTRAST_TEXT,
     },
     text: {
         primary: COLORS.TEXT.PRIMARY,
@@ -33,6 +36,10 @@ export const palette: PaletteOptions = {
     },
     info: {
         main: COLORS.INFO.MAIN,
-        contrastText: COLORS.WARNING.CONTRAST_TEXT,
+        contrastText: COLORS.INFO.CONTRAST_TEXT,
     },
+    background: {
+        default: COLORS.BACKGROUND.DEFAULT,
+    },
+    divider: COLORS.DIVIDER,
 };

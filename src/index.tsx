@@ -9,8 +9,8 @@ import { Provider } from 'react-redux';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
-import App from '@/app';
-import ErrorBoundary from '@/components/errorBoundary';
+import { App } from '@/App';
+import { ErrorBoundary } from '@/components/ErrorBoundary.component';
 import { store } from '@/state/store';
 import { theme } from '@theme';
 

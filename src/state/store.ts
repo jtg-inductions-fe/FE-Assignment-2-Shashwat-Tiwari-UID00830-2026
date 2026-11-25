@@ -3,6 +3,7 @@
  */
 import authReducer from '@/state/slices/authSlice';
 import restaurantReducer from '@/state/slices/restaurantSlice';
+
 import { configureStore } from '@reduxjs/toolkit';
 
 /**

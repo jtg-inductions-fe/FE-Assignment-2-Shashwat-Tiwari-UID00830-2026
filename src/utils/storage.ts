@@ -10,8 +10,14 @@
  * @returns The parsed stored data or the fallback value.
  */
 export const loadFromStorage = <T>(key: string, fallback: T) => {
-    const raw = localStorage.getItem(key);
-    return raw ? (JSON.parse(raw) as T) : fallback;
+    try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return fallback;
+        return JSON.parse(raw) as T;
+    } catch {
+        localStorage.removeItem(key);
+        return fallback;
+    }
 };
 
 /**
@@ -20,7 +26,11 @@ export const loadFromStorage = <T>(key: string, fallback: T) => {
  * @param value - The data to be stored.
  */
 export const saveToStorage = (key: string, value: unknown): void => {
-    localStorage.setItem(key, JSON.stringify(value));
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+        throw new Error();
+    }
 };
 
 /**

@@ -7,6 +7,7 @@ import {
     removeFromStorage,
     saveToStorage,
 } from '@/utils/storage';
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const savedUser = loadFromStorage('user', null);

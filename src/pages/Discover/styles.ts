@@ -40,12 +40,6 @@ export const CardGrid = styled(Box)(({ theme }) => ({
     },
 }));
 
-export const EmptyState = styled(Typography)(({ theme }) => ({
-    padding: theme.spacing(8, 0),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
-
 export const PageHeader = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexWrap: 'wrap',

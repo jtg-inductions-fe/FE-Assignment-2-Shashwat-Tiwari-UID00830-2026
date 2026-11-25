@@ -2,6 +2,8 @@
  * This file contains the dialog used to add or edit a restaurant.
  */
 
+import { useEffect } from 'react';
+
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
@@ -15,7 +17,6 @@ import {
     TextField,
 } from '@mui/material';
 
-import { Alert } from '@/components/Form/styles';
 import { DialogForm } from '@/components/RestaurantFormDialog/styles';
 import {
     addRestaurant,
@@ -25,11 +26,20 @@ import {
     RestaurantFormValues,
     restaurantSchema,
 } from '@/validations/restaurantValidations';
-import { zodResolver } from '@hookform/resolvers/zod';
 
 import { RestaurantFormDialogProps } from './RestaurantFormDialog.types';
 
-const RestaurantFormDialog = ({
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const EMPTY_VALUES: RestaurantFormValues = {
+    name: '',
+    cuisine: '',
+    type: 'non-veg',
+    image: '',
+    address: '',
+};
+
+export const RestaurantFormDialog = ({
     open,
     restaurant,
     ownerId,
@@ -37,14 +47,31 @@ const RestaurantFormDialog = ({
     onSaved,
 }: RestaurantFormDialogProps) => {
     const dispatch = useDispatch();
-    const isEdit = restaurant !== null;
+    const isEdit = Boolean(restaurant);
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors, isSubmitting },
     } = useForm<RestaurantFormValues>({
         resolver: zodResolver(restaurantSchema),
+        defaultValues: EMPTY_VALUES,
     });
+
+    useEffect(() => {
+        if (!open) return;
+        reset(
+            restaurant
+                ? {
+                      name: restaurant.name,
+                      cuisine: restaurant.cuisine,
+                      type: restaurant.type,
+                      image: restaurant.image,
+                      address: restaurant.address,
+                  }
+                : EMPTY_VALUES,
+        );
+    }, [open, restaurant, reset]);
     const onSubmit: SubmitHandler<RestaurantFormValues> = async (data) => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         if (restaurant) {
@@ -55,7 +82,7 @@ const RestaurantFormDialog = ({
                 addRestaurant({
                     id: `r${Date.now()}`,
                     ownerId,
-                    rating: 0,
+                    rating: Math.floor(Math.random() * 6),
                     ...data,
                 }),
             );
@@ -74,23 +101,45 @@ const RestaurantFormDialog = ({
                     id="restaurant-form"
                     noValidate
                 >
-                    <TextField {...register('name')} label="Name" />
-                    {errors.name && <Alert>{errors.name.message}</Alert>}
-                    <TextField {...register('cuisine')} label="Cuisine" />
-                    {errors.cuisine && <Alert>{errors.cuisine.message}</Alert>}
+                    <TextField
+                        {...register('name')}
+                        label="Name"
+                        error={!!errors.name}
+                        helperText={errors.name?.message}
+                    />
+
+                    <TextField
+                        {...register('cuisine')}
+                        label="Cuisine"
+                        error={!!errors.cuisine}
+                        helperText={errors.cuisine?.message}
+                    />
+
                     <TextField
                         select
                         label="Food type"
-                        defaultValue=""
                         {...register('type')}
+                        error={!!errors.type}
+                        helperText={errors.type?.message}
+                        defaultValue="non-veg"
                     >
                         <MenuItem value="veg">Veg</MenuItem>
                         <MenuItem value="non-veg">Non-veg</MenuItem>
                     </TextField>
-                    <TextField {...register('image')} label="Image URL" />
-                    {errors.image && <Alert>{errors.image.message}</Alert>}
-                    <TextField {...register('address')} label="Address" />
-                    {errors.address && <Alert>{errors.address.message}</Alert>}
+
+                    <TextField
+                        {...register('image')}
+                        label="Image URL"
+                        error={!!errors.image}
+                        helperText={errors.image?.message}
+                    />
+
+                    <TextField
+                        {...register('address')}
+                        label="Address"
+                        error={!!errors.address}
+                        helperText={errors.address?.message}
+                    />
                 </DialogForm>
             </DialogContent>
             <DialogActions>
@@ -110,5 +159,3 @@ const RestaurantFormDialog = ({
         </Dialog>
     );
 };
-
-export default RestaurantFormDialog;

@@ -1,14 +1,11 @@
 /**
  * This file contains the Styled components of the Form component.
  */
-import { typography } from 'theme/foundations/typography';
 
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import { BORDER_RADIUS } from '@/constant';
-
-export const PageRoot = styled('main')(({ theme }) => ({
+export const PageRoot = styled('div')(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -24,15 +21,15 @@ export const FormCard = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     gap: theme.spacing(5),
     width: '100%',
-    maxWidth: typography.typographyUtil.pxToRem(600),
+    maxWidth: theme.typography.pxToRem(600),
     height: 'auto',
-    maxHeight: typography.typographyUtil.pxToRem(800),
+    maxHeight: theme.typography.pxToRem(800),
     padding: theme.spacing(4, 3),
     backgroundColor: theme.palette.primary.contrastText,
     [theme.breakpoints.up('sm')]: {
         padding: theme.spacing(5),
-        border: '1px solid black',
-        borderRadius: BORDER_RADIUS,
+        border: `1px solid ${theme.palette.divider}`,
+        borderRadius: theme.shape.borderRadius,
     },
 }));
 
@@ -51,13 +48,6 @@ export const Form = styled('form')(({ theme }) => ({
     flexDirection: 'column',
     gap: theme.spacing(5),
     width: '80%',
-}));
-
-export const Alert = styled('div')(({ theme }) => ({
-    color: theme.palette.error.main,
-}));
-export const Submit = styled(Button)(() => ({
-    borderRadius: BORDER_RADIUS,
 }));
 
 export const FooterText = styled(Typography)(({ theme }) => ({

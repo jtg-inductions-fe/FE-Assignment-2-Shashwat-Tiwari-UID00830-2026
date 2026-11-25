@@ -24,6 +24,10 @@ export const COLORS = {
     ERROR: { MAIN: '#b91c1c', CONTRAST_TEXT: '#ffffff' },
     WARNING: { MAIN: '#b45309', CONTRAST_TEXT: '#ffffff' },
     INFO: { MAIN: '#0369a1', CONTRAST_TEXT: '#ffffff' },
+    BACKGROUND: {
+        DEFAULT: '#f8fafc',
+    },
+    DIVIDER: '#a8aaaf',
 };
 /**
  * Base font size in pixels.

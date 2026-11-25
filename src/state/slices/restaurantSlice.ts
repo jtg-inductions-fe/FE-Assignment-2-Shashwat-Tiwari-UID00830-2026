@@ -7,6 +7,7 @@ import {
     Restaurant,
     RestaurantState,
 } from '@/state/types/restaurantSlice.types';
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: RestaurantState = {

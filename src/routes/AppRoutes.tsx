@@ -4,18 +4,25 @@
 import { useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import Layout from '@/layouts/Layout';
-import Cart from '@/pages/Cart.page';
-import Discover from '@/pages/Discover/Discover.page';
-import Login from '@/pages/Login/Login.page';
-import NotFound from '@/pages/NotFound/NotFound.page';
-import Orders from '@/pages/Orders.page';
-import Register from '@/pages/Register/Register.page';
-import ProtectedRoute from '@/routes/protectedRoutes';
-import PublicRoute from '@/routes/publicRoutes';
+import {
+    CART_ROUTE,
+    DISCOVER_ROUTE,
+    LOGIN_ROUTE,
+    ORDERS_ROUTE,
+    REGISTER_ROUTE,
+} from '@/constant/index';
+import { Layout } from '@/layouts/Layout';
+import { Cart } from '@/pages/Cart.page';
+import { DiscoverPage } from '@/pages/Discover/Discover.page';
+import { LoginPage } from '@/pages/Login/Login.page';
+import { NotFound } from '@/pages/NotFound/NotFound.page';
+import { Orders } from '@/pages/Orders.page';
+import { RegisterPage } from '@/pages/Register/Register.page';
+import { ProtectedRoute } from '@/routes/ProtectedRoutes';
+import { PublicRoute } from '@/routes/PublicRoutes';
 import { RootState } from '@/state/store';
 
-const AppRoutes = () => {
+export const AppRoutes = () => {
     const isAuthenticated = useSelector(
         (state: RootState) => state.auth.isAuthenticated,
     );
@@ -26,26 +33,24 @@ const AppRoutes = () => {
                     index
                     element={
                         <Navigate
-                            to={isAuthenticated ? '/discover' : '/login'}
+                            to={isAuthenticated ? DISCOVER_ROUTE : LOGIN_ROUTE}
                             replace
                         />
                     }
                 />
                 <Route element={<PublicRoute />}>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
+                    <Route path={LOGIN_ROUTE} element={<LoginPage />} />
+                    <Route path={REGISTER_ROUTE} element={<RegisterPage />} />
                 </Route>
                 <Route element={<ProtectedRoute />}>
-                    <Route path="/discover" element={<Discover />} />
-                    <Route path="/orders" element={<Orders />} />
+                    <Route path={DISCOVER_ROUTE} element={<DiscoverPage />} />
+                    <Route path={ORDERS_ROUTE} element={<Orders />} />
                 </Route>
                 <Route element={<ProtectedRoute allowedRoles={['Customer']} />}>
-                    <Route path="/cart" element={<Cart />} />
+                    <Route path={CART_ROUTE} element={<Cart />} />
                 </Route>
             </Route>
             <Route path="*" element={<NotFound />} />
         </Routes>
     );
 };
-
-export default AppRoutes;

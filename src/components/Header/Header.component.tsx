@@ -5,8 +5,7 @@
 import { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -22,7 +21,7 @@ import { logout } from '@/state/slices/authSlice';
 import { RootState } from '@/state/store';
 
 import logo from '/logo.svg';
-const Header = () => {
+export const Header = () => {
     const { isAuthenticated, user } = useSelector(
         (state: RootState) => state.auth,
     );
@@ -67,7 +66,18 @@ const Header = () => {
                             open={Boolean(anchorEl)}
                             onClose={() => setAnchorEl(null)}
                         >
-                            <MenuItem>Hello {user?.name}!</MenuItem>
+                            <MenuItem
+                                disableRipple
+                                sx={{
+                                    cursor: 'default',
+                                    pointerEvents: 'none',
+                                    '&:hover': {
+                                        backgroundColor: 'transparent',
+                                    },
+                                }}
+                            >
+                                Hello {user?.name}!
+                            </MenuItem>
                             <MenuItem onClick={handleLogout}>Logout</MenuItem>
                         </Menu>
                     </>
@@ -97,5 +107,3 @@ const Header = () => {
         </HeaderStyle>
     );
 };
-
-export default Header;

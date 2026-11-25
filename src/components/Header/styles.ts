@@ -11,7 +11,7 @@ export const HeaderStyle = styled('header')(({ theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    minHeight: '10vh',
+    minHeight: theme.typography.pxToRem(100),
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     padding: theme.spacing(2, 2),
@@ -35,5 +35,5 @@ export const ButtonStyles = styled(Box)(({ theme }) => ({
 }));
 
 export const ProfileButton = styled(IconButton)(({ theme }) => ({
-    backgroundColor: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.background.default,
 }));

@@ -8,12 +8,13 @@ import { styled } from '@mui/material';
 
 import { BORDER_RADIUS } from '@/constant';
 
-export const CardBox = styled(Box)(() => ({
+export const CardBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
-    border: '1px solid black',
+    border: `1px solid ${theme.palette.divider}`,
     borderRadius: BORDER_RADIUS,
+    backgroundColor: theme.palette.background.default,
 }));
 
 export const CardLink = styled(Link)({

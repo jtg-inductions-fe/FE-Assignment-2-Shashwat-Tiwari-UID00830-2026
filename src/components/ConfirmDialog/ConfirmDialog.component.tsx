@@ -1,3 +1,6 @@
+/**
+ * This file contains the reusable confirmation dialog component.
+ */
 import {
     Button,
     Dialog,
@@ -9,7 +12,7 @@ import {
 
 import { ConfirmDialogProps } from '@/components/ConfirmDialog/ConfirmDialog.types';
 
-const ConfirmDialog = ({
+export const ConfirmDialog = ({
     open,
     title,
     message,
@@ -30,5 +33,3 @@ const ConfirmDialog = ({
         </DialogActions>
     </Dialog>
 );
-
-export default ConfirmDialog;

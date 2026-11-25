@@ -10,15 +10,18 @@ import {
     Title,
 } from '@/components/Form/styles';
 
-const FormComponent = ({ title, subtitle, children, footer }: FormProps) => (
+export const FormComponent = ({
+    title,
+    subtitle,
+    children,
+    footer,
+}: FormProps) => (
     <PageRoot>
         <FormCard>
             <Title variant="h3">{title}</Title>
-            <Subtitle>{subtitle}</Subtitle>
+            <Subtitle variant="body1">{subtitle}</Subtitle>
             {children}
-            {footer && <FooterText>{footer}</FooterText>}
+            {footer && <FooterText variant="body2">{footer}</FooterText>}
         </FormCard>
     </PageRoot>
 );
-
-export default FormComponent;
