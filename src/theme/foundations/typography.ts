@@ -12,10 +12,9 @@ const typographyUtil: TypographyUtils = {
 };
 
 const typographyStyle = (theme: Theme): TypographyOptions => ({
-    fontFamily: '"Inter", Arial, sans-serif',
+    fontFamily: '"Inter",sans-serif',
     htmlFontSize: HTML_FONT_SIZE,
 
-    fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
