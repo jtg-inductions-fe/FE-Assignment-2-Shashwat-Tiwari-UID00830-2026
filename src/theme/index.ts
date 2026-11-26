@@ -8,9 +8,9 @@ import { components } from './components';
 import {
     borders,
     breakpoints,
+    customShape,
     mixins,
     palette,
-    shape,
     typography,
 } from './foundations';
 
@@ -22,7 +22,7 @@ let theme = createTheme({
     breakpoints,
     mixins,
     components,
-    shape,
+    customShape,
     borders,
     typography: {
         fontFamily: 'Inter',

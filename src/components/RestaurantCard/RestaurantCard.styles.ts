@@ -11,7 +11,7 @@ export const CardBox = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     overflow: 'hidden',
     border: theme.borders.Border,
-    borderRadius: theme.shape.borderRadius,
+    borderRadius: theme.customShape.borderRadius,
     backgroundColor: theme.palette.background.default,
 }));
 

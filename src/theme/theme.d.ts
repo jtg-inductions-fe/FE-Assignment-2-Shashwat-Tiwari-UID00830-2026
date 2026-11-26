@@ -12,6 +12,17 @@ declare module '@mui/material/styles' {
             Border?: string;
         };
     }
+    interface Theme {
+        customShape: {
+            borderRadius: string | number;
+        };
+    }
+
+    interface ThemeOptions {
+        customShape?: {
+            borderRadius?: string | number;
+        };
+    }
 }
 
 export declare module '@mui/material/styles/createMixins' {

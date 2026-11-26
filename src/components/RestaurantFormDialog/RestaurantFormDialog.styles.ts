@@ -13,5 +13,5 @@ export const DialogForm = styled('form')(({ theme }) => ({
     paddingTop: theme.spacing(2),
     maxheight: typography.typographyUtil.pxToRem(600),
     width: typography.typographyUtil.pxToRem(400),
-    borderRadius: theme.shape.borderRadius,
+    borderRadius: theme.customShape.borderRadius,
 }));
