@@ -14,7 +14,6 @@ const savedUser = loadFromStorage('user', null);
 
 const initialState: AuthState = {
     user: savedUser,
-    isAuthenticated: Boolean(savedUser),
 };
 
 const authSlice = createSlice({
@@ -23,19 +22,16 @@ const authSlice = createSlice({
     reducers: {
         registerSuccess: (state, action: PayloadAction<User>) => {
             state.user = action.payload;
-            state.isAuthenticated = true;
             saveToStorage('user', action.payload);
         },
 
         loginSuccess: (state, action: PayloadAction<User>) => {
             state.user = action.payload;
-            state.isAuthenticated = true;
             saveToStorage('user', action.payload);
         },
 
         logout: (state) => {
             state.user = null;
-            state.isAuthenticated = false;
             removeFromStorage('user');
         },
     },

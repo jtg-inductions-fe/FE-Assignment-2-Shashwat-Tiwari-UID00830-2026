@@ -1,27 +1,19 @@
 /**
  * This file contains the rendering logic and UI for the Register form.
  */
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-import {
-    Button,
-    FormControl,
-    FormControlLabel,
-    FormLabel,
-    Radio,
-    TextField,
-} from '@mui/material';
+import { Button, FormControlLabel, Radio, TextField } from '@mui/material';
 
 import { FormComponent } from '@/components/Form/Form.component';
-import { Form } from '@/components/Form/styles';
-import { RadioGroupStyles } from '@/pages/Register/styles';
+import { Form } from '@/components/Form/Form.styles';
+import { RadioGroupStyles } from '@/components/Register/Register.styles';
+import { RegisterProps } from '@/components/Register/Register.types';
 import {
     RegisterFormValues,
     registerSchema,
 } from '@/validations/registerValidations';
-
-import { RegisterProps } from './Register.types';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -30,6 +22,7 @@ export const Register = ({ onRegister }: RegisterProps) => {
         register,
         handleSubmit,
         setError,
+        control,
         formState: { errors, isSubmitting },
     } = useForm<RegisterFormValues>({
         resolver: zodResolver(registerSchema),
@@ -89,21 +82,24 @@ export const Register = ({ onRegister }: RegisterProps) => {
                     helperText={errors.password?.message}
                 />
 
-                <FormControl>
-                    <FormLabel>Role</FormLabel>
-                    <RadioGroupStyles defaultValue="Customer">
-                        <FormControlLabel
-                            value="Customer"
-                            control={<Radio {...register('role')} />}
-                            label="Customer"
-                        />
-                        <FormControlLabel
-                            value="Owner"
-                            control={<Radio {...register('role')} />}
-                            label="Restaurant Partner"
-                        />
-                    </RadioGroupStyles>
-                </FormControl>
+                <Controller
+                    name="role"
+                    control={control}
+                    render={({ field }) => (
+                        <RadioGroupStyles {...field}>
+                            <FormControlLabel
+                                value="Customer"
+                                control={<Radio />}
+                                label="Customer"
+                            />
+                            <FormControlLabel
+                                value="Owner"
+                                control={<Radio />}
+                                label="Owner"
+                            />
+                        </RadioGroupStyles>
+                    )}
+                />
 
                 <Button
                     disabled={isSubmitting}

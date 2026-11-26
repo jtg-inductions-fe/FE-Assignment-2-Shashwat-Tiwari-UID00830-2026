@@ -28,7 +28,7 @@ export const FormCard = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.primary.contrastText,
     [theme.breakpoints.up('sm')]: {
         padding: theme.spacing(5),
-        border: `1px solid ${theme.palette.divider}`,
+        border: theme.borders.Border,
         borderRadius: theme.shape.borderRadius,
     },
 }));

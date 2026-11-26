@@ -5,11 +5,10 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { Login } from '@/components/Login/Login.component';
 import { authenticate } from '@/services/authService/authService';
 import { loginSuccess } from '@/state/slices/authSlice';
 import { LoginFormValues } from '@/validations/loginValidations';
-
-import { Login } from './Login.component';
 
 export const LoginContainer = () => {
     const navigate = useNavigate();

@@ -7,12 +7,12 @@ import { ErrorBoundary } from '@/components/ErrorBoundary.component';
 import { Header } from '@/components/Header/Header.component';
 
 export const Layout = () => (
-    <div>
+    <>
         <Header />
         <ErrorBoundary>
             <main>
                 <Outlet />
             </main>
         </ErrorBoundary>
-    </div>
+    </>
 );

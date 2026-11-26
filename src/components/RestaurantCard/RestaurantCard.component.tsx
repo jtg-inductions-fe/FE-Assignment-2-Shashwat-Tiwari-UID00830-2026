@@ -2,12 +2,11 @@
  * This file contains the restaurant card shown on the discover page.
  */
 
-import { Star } from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import StarIcon from '@mui/icons-material/Star';
 import { IconButton } from '@mui/material';
 
-import { RestaurantCardProps } from '@/components/RestaurantCard/RestaurantCard.types';
 import {
     CardBody,
     CardBox,
@@ -17,7 +16,8 @@ import {
     FoodTypeLabel,
     Name,
     OwnerActions,
-} from '@/components/RestaurantCard/styles';
+} from '@/components/RestaurantCard/RestaurantCard.styles';
+import { RestaurantCardProps } from '@/components/RestaurantCard/RestaurantCard.types';
 import { FOOD_TYPE } from '@/constant/TypeConstants';
 
 export const RestaurantCard = ({
@@ -32,7 +32,7 @@ export const RestaurantCard = ({
                 <Name variant="body1">{restaurant.name}</Name>
                 <Desc variant="body1">
                     {restaurant.cuisine}
-                    <Star />
+                    <StarIcon />
                     {restaurant.rating}
                 </Desc>
                 <Desc>{restaurant.address}</Desc>

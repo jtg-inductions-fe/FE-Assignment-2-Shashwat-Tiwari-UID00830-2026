@@ -16,15 +16,13 @@ import {
     HeaderStyle,
     Logo,
     ProfileButton,
-} from '@/components/Header/styles';
+} from '@/components/Header/Header.styles';
 import { logout } from '@/state/slices/authSlice';
 import { RootState } from '@/state/store';
 
-import logo from '/logo.svg';
 export const Header = () => {
-    const { isAuthenticated, user } = useSelector(
-        (state: RootState) => state.auth,
-    );
+    const { user } = useSelector((state: RootState) => state.auth);
+    const isAuthenticated = user !== null;
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -37,7 +35,7 @@ export const Header = () => {
     return (
         <HeaderStyle>
             <Logo to="/">
-                <img src={logo} alt="BiteBox Logo" height="70" width="70" />
+                <img src="/logo.svg" alt="Logo" height="70" width="70" />
                 BiteBox
             </Logo>
             <ButtonStyles>

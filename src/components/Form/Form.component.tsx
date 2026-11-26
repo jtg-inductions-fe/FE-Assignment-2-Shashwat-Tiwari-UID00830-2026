@@ -1,14 +1,14 @@
 /**
  * This file contains the stylings of the reusable Form component.
  */
-import { FormProps } from '@/components/Form/Form.types';
 import {
     FooterText,
     FormCard,
     PageRoot,
     Subtitle,
     Title,
-} from '@/components/Form/styles';
+} from '@/components/Form/Form.styles';
+import { FormProps } from '@/components/Form/Form.types';
 
 export const FormComponent = ({
     title,

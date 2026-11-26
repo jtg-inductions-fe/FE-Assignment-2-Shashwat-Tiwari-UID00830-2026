@@ -2,7 +2,7 @@
  * This file handles the authentication process of the login form from the mock data.
  */
 import localUsers from '@/data/users.json';
-import { StoredUser } from '@/services/authService/authService.types';
+import { User } from '@/state/types/authSlice.types';
 /**
  * Validates the provided email and password against the available users.
  * @param email - Email entered by the user in the login form.
@@ -14,7 +14,7 @@ export const authenticate = (email: string, password: string) => {
         (u) =>
             u.email.toLowerCase() === email.toLowerCase() &&
             u.password === password,
-    ) as StoredUser;
+    ) as User;
     if (!match) return null;
     return match;
 };

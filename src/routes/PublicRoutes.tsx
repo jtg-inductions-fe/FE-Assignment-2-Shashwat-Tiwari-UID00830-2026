@@ -9,7 +9,7 @@ import { RootState } from '@/state/store';
 
 export const PublicRoute = () => {
     const isAuthenticated = useSelector(
-        (state: RootState) => state.auth.isAuthenticated,
+        (state: RootState) => state.auth.user !== null,
     );
     return isAuthenticated ? (
         <Navigate to={DISCOVER_ROUTE} replace />

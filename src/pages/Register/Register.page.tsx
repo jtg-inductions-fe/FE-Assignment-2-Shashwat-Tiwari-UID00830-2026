@@ -1,6 +1,6 @@
 /**
  * This file contains the Register page.
  */
-import { RegisterContainer } from './Register.container';
+import { RegisterContainer } from '@/containers/Register/Register.container';
 
 export const RegisterPage = () => <RegisterContainer />;

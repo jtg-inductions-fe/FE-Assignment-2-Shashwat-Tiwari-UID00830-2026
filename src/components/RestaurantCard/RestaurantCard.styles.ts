@@ -6,14 +6,12 @@ import { Link } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material';
 
-import { BORDER_RADIUS } from '@/constant';
-
 export const CardBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
-    border: `1px solid ${theme.palette.divider}`,
-    borderRadius: BORDER_RADIUS,
+    border: theme.borders.Border,
+    borderRadius: theme.shape.borderRadius,
     backgroundColor: theme.palette.background.default,
 }));
 

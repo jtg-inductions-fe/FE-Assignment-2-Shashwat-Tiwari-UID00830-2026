@@ -17,7 +17,7 @@ import {
     TextField,
 } from '@mui/material';
 
-import { DialogForm } from '@/components/RestaurantFormDialog/styles';
+import { DialogForm } from '@/components/RestaurantFormDialog/RestaurantFormDialog.styles';
 import {
     addRestaurant,
     updateRestaurant,

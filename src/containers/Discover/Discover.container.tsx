@@ -4,14 +4,14 @@
  */
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Discover } from '@/pages/Discover/Discover.component';
+import { Discover } from '@/components/Discover/Discover.component';
 import { deleteRestaurant } from '@/state/slices/restaurantSlice';
 import { RootState } from '@/state/store';
 
 export const DiscoverContainer = () => {
     const user = useSelector((state: RootState) => state.auth.user);
     const restaurants = useSelector(
-        (state: RootState) => state.restaurant.items,
+        (state: RootState) => state.restaurants.items,
     );
     const dispatch = useDispatch();
 

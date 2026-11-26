@@ -15,11 +15,6 @@ import {
 import InputAdornment from '@mui/material/InputAdornment';
 
 import { ConfirmDialog } from '@/components/ConfirmDialog/ConfirmDialog.component';
-import { EmptyState } from '@/components/EmptyState.component';
-import { RestaurantCard } from '@/components/RestaurantCard/RestaurantCard.component';
-import { RestaurantFormDialog } from '@/components/RestaurantFormDialog/RestaurantFormDialog.component';
-import { useDebounce } from '@/hooks/useDebounce';
-import { DiscoverProps, FoodFilter } from '@/pages/Discover/Discover.types';
 import {
     CardGrid,
     Heading,
@@ -27,7 +22,12 @@ import {
     PageRoot,
     Searchbar,
     SearchField,
-} from '@/pages/Discover/styles';
+} from '@/components/Discover/Discover.styles';
+import { EmptyState } from '@/components/EmptyState.component';
+import { RestaurantCard } from '@/components/RestaurantCard/RestaurantCard.component';
+import { RestaurantFormDialog } from '@/components/RestaurantFormDialog/RestaurantFormDialog.component';
+import { useDebounce } from '@/hooks/useDebounce';
+import { DiscoverProps, FoodFilter } from '@/pages/Discover/Discover.types';
 import { Restaurant } from '@/state/types/restaurantSlice.types';
 
 export const Discover = ({

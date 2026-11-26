@@ -15,7 +15,7 @@ import { Layout } from '@/layouts/Layout';
 import { Cart } from '@/pages/Cart.page';
 import { DiscoverPage } from '@/pages/Discover/Discover.page';
 import { LoginPage } from '@/pages/Login/Login.page';
-import { NotFound } from '@/pages/NotFound/NotFound.page';
+import { NotFoundPage } from '@/pages/NotFound/NotFound.page';
 import { Orders } from '@/pages/Orders.page';
 import { RegisterPage } from '@/pages/Register/Register.page';
 import { ProtectedRoute } from '@/routes/ProtectedRoutes';
@@ -24,7 +24,7 @@ import { RootState } from '@/state/store';
 
 export const AppRoutes = () => {
     const isAuthenticated = useSelector(
-        (state: RootState) => state.auth.isAuthenticated,
+        (state: RootState) => state.auth.user !== null,
     );
     return (
         <Routes>
@@ -50,7 +50,7 @@ export const AppRoutes = () => {
                     <Route path={CART_ROUTE} element={<Cart />} />
                 </Route>
             </Route>
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFoundPage />} />
         </Routes>
     );
 };

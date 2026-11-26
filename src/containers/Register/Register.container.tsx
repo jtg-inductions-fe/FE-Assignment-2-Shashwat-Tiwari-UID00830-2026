@@ -5,8 +5,8 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { Register } from '@/components/Register/Register.component';
 import localUsers from '@/data/users.json';
-import { Register } from '@/pages/Register/Register.component';
 import { registerSuccess } from '@/state/slices/authSlice';
 import { User } from '@/state/types/authSlice.types';
 import { RegisterFormValues } from '@/validations/registerValidations';

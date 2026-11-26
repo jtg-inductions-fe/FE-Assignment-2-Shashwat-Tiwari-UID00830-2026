@@ -7,10 +7,9 @@ import { Link } from 'react-router-dom';
 import { Button, TextField } from '@mui/material';
 
 import { FormComponent } from '@/components/Form/Form.component';
-import { Form } from '@/components/Form/styles';
+import { Form } from '@/components/Form/Form.styles';
+import { LoginProps } from '@/components/Login/Login.types';
 import { LoginFormValues, loginSchema } from '@/validations/loginValidations';
-
-import { LoginProps } from './Login.types';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 

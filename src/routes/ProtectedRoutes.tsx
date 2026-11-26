@@ -6,14 +6,12 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 import { DISCOVER_ROUTE } from '@/constant';
 import { RootState } from '@/state/store';
-import type { Role } from '@/state/types/authSlice.types';
 
-interface ProtectedRouteProps {
-    allowedRoles?: Role[];
-}
+import { ProtectedRouteProps } from './Routes.types';
+
 export const ProtectedRoute = ({ allowedRoles }: ProtectedRouteProps) => {
     const isAuthenticated = useSelector(
-        (state: RootState) => state.auth.isAuthenticated,
+        (state: RootState) => state.auth.user !== null,
     );
     const role = useSelector((state: RootState) => state.auth.user?.role);
     if (!isAuthenticated) return <Navigate to="/login" replace />;
