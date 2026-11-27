@@ -87,7 +87,8 @@ export const BannerActions = styled(Box)(({ theme }) => ({
     marginTop: theme.spacing(2),
 }));
 
-export const Rating = styled(Typography)(() => ({
+export const Rating = styled(Typography)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
+    gap: theme.spacing(2),
 }));

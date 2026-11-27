@@ -5,7 +5,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { Button, IconButton, Typography } from '@mui/material';
 
-import { MenuItemCardProps } from '@/components/MenuItemCard/MenuItemCard.types';
 import {
     CardBody,
     CardBox,
@@ -15,8 +14,9 @@ import {
     Footer,
     Name,
     OutOfStock,
-} from '@/components/MenuItemCard/styles';
-import { OwnerActions } from '@/components/MenuItemCard/styles';
+} from '@/components/MenuItemCard/MenuItemCard.styles';
+import { OwnerActions } from '@/components/MenuItemCard/MenuItemCard.styles';
+import { MenuItemCardProps } from '@/components/MenuItemCard/MenuItemCard.types';
 import { formatPrice } from '@/utils/format';
 
 export const MenuItemCard = ({
