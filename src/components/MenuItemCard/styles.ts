@@ -57,3 +57,11 @@ export const OutOfStock = styled(Typography)(({ theme }) => ({
     color: theme.palette.error.main,
     fontWeight: theme.typography.fontWeightMedium,
 }));
+
+export const OwnerActions = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: theme.spacing(1, 2, 1, 3),
+    borderTop: `1px solid ${theme.palette.divider}`,
+}));

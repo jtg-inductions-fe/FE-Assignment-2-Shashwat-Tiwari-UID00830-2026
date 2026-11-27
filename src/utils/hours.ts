@@ -14,8 +14,8 @@ export const DEFAULT_HOURS: StoreHours = {
 
 /**
  * Tells whether the restaurant is open right now or not.
- * @param hours
- * @param now
+ * @param hours - the opening and closing hours of the store
+ * @param now - current time
  * @returns {object} an object which contains details about the opening of restaurant.
  */
 export const getOpenStatus = (hours: StoreHours, now = new Date()) => {
@@ -24,7 +24,7 @@ export const getOpenStatus = (hours: StoreHours, now = new Date()) => {
     return {
         isOpen,
         label: isOpen
-            ? `Open now . closes ${hours.closeHours}`
-            : `Closed now . opens ${hours.openHours}`,
+            ? `Open now - closes ${hours.closeHours}`
+            : `Closed now - opens ${hours.openHours}`,
     };
 };

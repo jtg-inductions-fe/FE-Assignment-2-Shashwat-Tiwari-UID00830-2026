@@ -9,8 +9,8 @@
         "rating": 4.4,
         "address": "Connaught Place, Delhi",
         "hours": {
-            "open": "11:00",
-            "close": "23:00"
+            "openHours": "11:00",
+            "closeHours": "23:00"
         }
     },
     {
@@ -23,8 +23,8 @@
         "rating": 4.2,
         "address": "Hauz Khas, Delhi",
         "hours": {
-            "open": "9:00",
-            "close": "22:00"
+            "openHours": "9:00",
+            "closeHours": "22:00"
         }
     },
     {
@@ -37,8 +37,8 @@
         "rating": 4.6,
         "address": "Karol Bagh, Delhi",
         "hours": {
-            "open": "9:00",
-            "close": "22:00"
+            "openHours": "9:00",
+            "closeHours": "22:00"
         }
     },
     {
@@ -51,8 +51,8 @@
         "rating": 4.1,
         "address": "Saket, Delhi",
         "hours": {
-            "open": "11:00",
-            "close": "23:00"
+            "openHours": "11:00",
+            "closeHours": "23:00"
         }
     }
 ]

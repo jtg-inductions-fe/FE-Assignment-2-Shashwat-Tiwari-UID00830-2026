@@ -1,5 +1,11 @@
-import { Button } from '@mui/material';
+/**
+ * This file contains the Menu Item Card component
+ */
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import { Button, IconButton, Typography } from '@mui/material';
 
+import { MenuItemCardProps } from '@/components/MenuItemCard/MenuItemCard.types';
 import {
     CardBody,
     CardBox,
@@ -10,11 +16,15 @@ import {
     Name,
     OutOfStock,
 } from '@/components/MenuItemCard/styles';
+import { OwnerActions } from '@/components/MenuItemCard/styles';
 import { formatPrice } from '@/utils/format';
 
-import { MenuItemCardProps } from './MenuItemCard.types';
-
-export const MenuItemCard = ({ item, onAddToCart }: MenuItemCardProps) => {
+export const MenuItemCard = ({
+    item,
+    onAddToCart,
+    onEdit,
+    onDelete,
+}: MenuItemCardProps) => (
     <CardBox>
         <CardImage src={item.image} alt={item.name} />
         <CardBody>
@@ -40,5 +50,28 @@ export const MenuItemCard = ({ item, onAddToCart }: MenuItemCardProps) => {
                     ))}
             </Footer>
         </CardBody>
-    </CardBox>;
-};
+        {(onEdit || onDelete) && (
+            <OwnerActions>
+                <Typography variant="body1">Stock: {item.stock}</Typography>
+                <div>
+                    {onEdit && (
+                        <IconButton
+                            aria-label="Edit item"
+                            onClick={() => onEdit(item)}
+                        >
+                            <EditIcon />
+                        </IconButton>
+                    )}
+                    {onDelete && (
+                        <IconButton
+                            aria-label="Delete item"
+                            onClick={() => onDelete(item)}
+                        >
+                            <DeleteIcon />
+                        </IconButton>
+                    )}
+                </div>
+            </OwnerActions>
+        )}
+    </CardBox>
+);
