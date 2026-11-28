@@ -24,7 +24,6 @@ export const Banner = styled(Box)(({ theme }) => ({
 
     [theme.breakpoints.up('md')]: {
         flexDirection: 'row',
-        minHeight: 280,
     },
 }));
 

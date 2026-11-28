@@ -10,3 +10,8 @@ export interface StoreHourDialogProps {
     onClose: () => void;
     onSaved: (message: string) => void;
 }
+
+export interface HoursFormValues {
+    openHours: string;
+    closeHours: string;
+}

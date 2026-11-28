@@ -17,10 +17,8 @@ import {
 
 import { DialogForm } from '@/components/RestaurantFormDialog/RestaurantFormDialog.styles';
 import { StoreHourDialogProps } from '@/components/StoreHoursDialog/StoreHourDialog.types';
+import { HoursFormValues } from '@/components/StoreHoursDialog/StoreHourDialog.types';
 import { updateRestaurant } from '@/state/slices/restaurantSlice';
-import { HoursFormValues, hoursSchema } from '@/validations/hoursValidations';
-
-import { zodResolver } from '@hookform/resolvers/zod';
 
 export const StoreHourDialog = ({
     open,
@@ -33,9 +31,8 @@ export const StoreHourDialog = ({
         register,
         handleSubmit,
         reset,
-        formState: { errors, isSubmitting },
+        formState: { isSubmitting },
     } = useForm<HoursFormValues>({
-        resolver: zodResolver(hoursSchema),
         defaultValues: restaurant.hours,
     });
     useEffect(() => {
@@ -60,15 +57,11 @@ export const StoreHourDialog = ({
                         {...register('openHours')}
                         type="time"
                         label="Opens at"
-                        error={!!errors.openHours}
-                        helperText={errors.openHours?.message}
                     />
                     <TextField
                         {...register('closeHours')}
                         type="time"
                         label="Closes at"
-                        error={!!errors.closeHours}
-                        helperText={errors.closeHours?.message}
                     />
                 </DialogForm>
             </DialogContent>
