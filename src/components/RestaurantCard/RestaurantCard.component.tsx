@@ -18,6 +18,7 @@ import {
     OwnerActions,
 } from '@/components/RestaurantCard/RestaurantCard.styles';
 import { RestaurantCardProps } from '@/components/RestaurantCard/RestaurantCard.types';
+import { DISCOVER_ROUTE } from '@/constant';
 import { FOOD_TYPE } from '@/constant/TypeConstants';
 
 export const RestaurantCard = ({
@@ -26,7 +27,7 @@ export const RestaurantCard = ({
     onDelete,
 }: RestaurantCardProps) => (
     <CardBox>
-        <CardLink to={`/discover/${restaurant.id}`}>
+        <CardLink to={`${DISCOVER_ROUTE}/${restaurant.id}`}>
             <CardImage src={restaurant.image} alt={restaurant.name} />
             <CardBody>
                 <Name variant="body1">{restaurant.name}</Name>

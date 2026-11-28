@@ -5,6 +5,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Discover } from '@/components/Discover/Discover.component';
+import { deleteMenuItemsByRestaurant } from '@/state/slices/menuSlice';
 import { deleteRestaurant } from '@/state/slices/restaurantSlice';
 import { RootState } from '@/state/store';
 
@@ -17,6 +18,7 @@ export const DiscoverContainer = () => {
 
     const handleDeleteRestaurant = (id: string) => {
         dispatch(deleteRestaurant(id));
+        dispatch(deleteMenuItemsByRestaurant(id));
     };
 
     return (
